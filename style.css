@@ -1,0 +1,125 @@
+/* Keep UI exactly as requested (dark gradient + card) */
+body {
+  background: linear-gradient(135deg,#0f172a 0%, #0b3a5a 40%, #075985 100%);
+  color: #fff;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card-shell {
+  width: 100%;
+  max-width: 980px;
+  border-radius: 14px;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+}
+
+/* Headings */
+.big-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+}
+.text-gradient {
+  background: linear-gradient(90deg,#06b6d4,#818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.byline {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.center-row { display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap; }
+
+.step-card {
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.hidden { display: none; }
+
+.timer {
+  font-weight:700;
+  font-size:1.05rem;
+  color: #fff;
+  background: rgba(255,255,255,0.03);
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* question box */
+.question-box {
+  background: rgba(255,255,255,0.02);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  margin-top: .5rem;
+}
+
+/* options */
+.option-label {
+  display:block;
+  padding: .65rem;
+  border-radius: 8px;
+  margin-bottom: .5rem;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02);
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease;
+}
+.option-label:hover {
+  transform: translateX(6px);
+  background: rgba(255,255,255,0.02);
+}
+.option-input { margin-right: .6rem; }
+
+/* buttons - varied styles */
+.btn-glow {
+  background: linear-gradient(90deg,#4f46e5,#06b6d4);
+  border: none;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+.btn-glow:hover { transform: scale(1.03); box-shadow: 0 8px 28px rgba(6,184,212,0.08); }
+
+.btn-html {
+  background: linear-gradient(90deg,#ff5722,#ff9800);
+  color: #fff;
+  border: none;
+}
+.btn-css {
+  background: linear-gradient(90deg,#2196f3,#00bcd4);
+  color: #fff;
+  border: none;
+}
+.btn-js {
+  background: linear-gradient(90deg,#fdd835,#fbc02d);
+  color: #000;
+  border: none;
+}
+
+/* review styles */
+.result-correct { background: rgba(76,175,80,0.12); border-left: 4px solid #4caf50; }
+.result-wrong { background: rgba(244,67,54,0.09); border-left: 4px solid #f44336; }
+.review-item { padding: .75rem; border-radius:8px; margin-bottom:.5rem; }
+
+/* animation helper */
+.enter { animation: fadeInUp .45s ease both; }
+@keyframes fadeInUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+
+/* responsive tweaks for info form spacing */
+@media (max-width: 767px) {
+  .card-shell { padding: 1rem; }
+  .step-card { padding: .75rem; }
+  .option-label { font-size: .95rem; }
+  .center-row { gap: .4rem; }
+}
